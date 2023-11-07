@@ -12,7 +12,7 @@ export const Button = ({type, iconPosition, size, label, disabled, icon, ...prop
     <button
       type="button"
       disabled={disabled}
-      className={['button', type].join(' ')}
+      className={['button', type, size].join(' ')}
       {...props}
     >
       {icon && iconPosition === 'left' && <Icon className="icon"
@@ -28,10 +28,12 @@ Button.propTypes = {
   type: PropTypes.string,
   iconPosition: PropTypes.string,
   label: PropTypes.string,
+  size: PropTypes.string,
 };
 
 Button.defaultProps = {
   type: 'primary',
   iconPosition: 'left',
   label: 'Button',
+  size: 'base',
 };

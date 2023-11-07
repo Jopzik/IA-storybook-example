@@ -2,7 +2,8 @@
   --_button-padding-block  : 0.5rem;
   --_button-padding-inline : 1rem;
   --_button-background     : #225BE8;
-  --_button-text           : white;
+  --_button-text-color     : white;
+  --_button-text-size      : 1rem;
   --_button-border         : #225BE8;
   --_button-radius         : 0.25rem;
   --_button-cursor         : pointer;
@@ -14,11 +15,18 @@
   padding                  : var(--_button-padding-block) var(--_button-padding-inline);
   border-radius            : var(--_button-radius);
   background-color         : var(--_button-background);
-  color                    : var(--_button-text);
+  color                    : var(--_button-text-color);
+  font-size                : var(--_button-text-size);
   font-family              : 'Work Sans', sans-serif;
   font-weight              : 600;
   cursor                   : var(--_button-cursor);
   border                   : 2px solid var(--_button-border);
+}
+
+.button.small {
+  --_button-text-size      : 0.75rem;
+  --_button-padding-inline : 0.5rem;
+  --_button-padding-block  : 0.25rem;
 }
 
 .button.rounded {
@@ -27,7 +35,7 @@
 
 .button:is(.outline, .ghost) {
   --_button-background : transparent;
-  --_button-text       : #225BE8;
+  --_button-text-color : #225BE8;
 }
 
 .button.ghost {
@@ -37,7 +45,7 @@
 .button:hover {
   --_button-background : #1C46C5;
   --_button-border     : #1C46C5;
-  --_button-text       : white;
+  --_button-text-color : white;
 }
 
 .button:is(.disabled, :disabled) {
@@ -48,7 +56,7 @@
 
 .button:is(.disabled, :disabled):is(.outline, .ghost) {
   --_button-background : transparent;
-  --_button-text       : #8F9BA4;
+  --_button-text-color : #8F9BA4;
 }
 
 .button:is(.disabled, :disabled).ghost {

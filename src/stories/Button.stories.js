@@ -34,6 +34,10 @@ export default {
       control: 'boolean',
       name: 'Disabled',
     },
+    size: {
+      control: 'radio',
+      options: ['base', 'small']
+    },
   },
 };
 
@@ -44,5 +48,6 @@ export const Primary = {
     iconPosition: 'left',
     disabled: false,
     icon: HELP_CIRCLE_ICON,
+    size: 'base',
   },
 };
