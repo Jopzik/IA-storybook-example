@@ -1,0 +1,34 @@
+.button {
+  --_button-padding-block  : 0.5rem;
+  --_button-padding-inline : 1rem;
+  --_button-background     : #225BE8;
+  --_button-text           : white;
+  --_button-border         : #225BE8;
+  all                      : unset;
+  display                  : inline-flex;
+  align-items              : center;
+  gap                      : 0.25rem;
+  padding                  : var(--_button-padding-block) var(--_button-padding-inline);
+  border-radius            : 0.25rem;
+  background-color         : var(--_button-background);
+  color                    : var(--_button-text);
+  font-family              : 'Work Sans', sans-serif;
+  font-weight              : 600;
+  cursor                   : pointer;
+  border                   : 2px solid var(--_button-border);
+}
+
+.button:is(.outline, .ghost) {
+  --_button-background : transparent;
+  --_button-text       : #225BE8;
+}
+
+.button.ghost {
+  --_button-border : transparent;
+}
+
+.button:hover {
+  --_button-background : #1C46C5;
+  --_button-border     : #1C46C5;
+  --_button-text       : white;
+}
