@@ -1,0 +1,29 @@
+.action-button {
+  --_action-color      : #59646F;
+  --_action-background : white;
+  all                  : unset;
+  display              : flex;
+  justify-content      : center;
+  align-items          : center;
+  width                : 2rem;
+  height               : 2rem;
+  cursor               : pointer;
+  border-radius        : 50%;
+  background-color     : var(--_action-background);
+  color                : var(--_action-color);
+
+  &:hover {
+    --_action-background : #E9EEFB;
+    --_action-color      : #225BE8;
+  }
+
+  &.cancel:hover {
+    --_action-background : #F6DFDF;
+    --_action-color      : #F65858;
+  }
+
+  &.back:hover {
+    --_action-background : #F2F7F9;
+    --_action-color      : #59646F;
+  }
+}

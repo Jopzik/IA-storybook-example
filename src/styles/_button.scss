@@ -21,44 +21,44 @@
   font-weight              : 600;
   cursor                   : var(--_button-cursor);
   border                   : 2px solid var(--_button-border);
-}
 
-.button.small {
-  --_button-text-size      : 0.75rem;
-  --_button-padding-inline : 0.5rem;
-  --_button-padding-block  : 0.25rem;
-}
+  &.small {
+    --_button-text-size      : 0.75rem;
+    --_button-padding-inline : 0.5rem;
+    --_button-padding-block  : 0.25rem;
+  }
 
-.button.rounded {
-  --_button-radius : 10rem;
-}
+  &.rounded {
+    --_button-radius : 10rem;
+  }
 
-.button:is(.outline, .ghost) {
-  --_button-background : transparent;
-  --_button-text-color : #225BE8;
-}
+  &:is(.outline, .ghost) {
+    --_button-background : transparent;
+    --_button-text-color : #225BE8;
+  }
 
-.button.ghost {
-  --_button-border : transparent;
-}
+  &.ghost {
+    --_button-border : transparent;
+  }
 
-.button:hover {
-  --_button-background : #1C46C5;
-  --_button-border     : #1C46C5;
-  --_button-text-color : white;
-}
+  &:hover {
+    --_button-background : #1C46C5;
+    --_button-border     : #1C46C5;
+    --_button-text-color : white;
+  }
 
-.button:is(.disabled, :disabled) {
-  --_button-background : #8F9BA4;
-  --_button-border     : #8F9BA4;
-  --_button-cursor     : not-allowed;
-}
+  &:is(.disabled, :disabled) {
+    --_button-background : #8F9BA4;
+    --_button-border     : #8F9BA4;
+    --_button-cursor     : not-allowed;
 
-.button:is(.disabled, :disabled):is(.outline, .ghost) {
-  --_button-background : transparent;
-  --_button-text-color : #8F9BA4;
-}
+    &:is(.outline, .ghost) {
+      --_button-background : transparent;
+      --_button-text-color : #8F9BA4;
+    }
 
-.button:is(.disabled, :disabled).ghost {
-  --_button-border : transparent;
+    &.ghost {
+      --_button-border : transparent;
+    }
+  }
 }

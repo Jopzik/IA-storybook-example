@@ -1,4 +1,4 @@
-export const CROSS_CIRCLE_ICON = (
+export const CROSS_ICON = (
   <>
     <path fill-rule="evenodd"
       clip-rule="evenodd"
