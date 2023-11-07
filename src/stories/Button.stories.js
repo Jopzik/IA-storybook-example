@@ -1,4 +1,7 @@
 import {Button} from '../components/core/Button';
+import {HELP_CIRCLE_ICON} from "../icons/help-circle";
+import {_icons} from "../icons/_icons";
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -14,21 +17,32 @@ export default {
   argTypes: {
     type: {
       control: 'select',
-      options: ['primary', 'outline', 'ghost'],
+      options: ['primary', 'rounded', 'outline', 'ghost'],
       name: 'Type'
     },
-    showIcon: {
-      control: 'select',
+    iconPosition: {
+      control: 'radio',
       options: ['left', 'right', 'none'],
-      name: 'Show icon'
-    }
+      name: 'Icon position'
+    },
+    icon: {
+      control: 'select',
+      options: Object.keys(_icons),
+      name: 'Icon',
+    },
+    disabled: {
+      control: 'boolean',
+      name: 'Disabled',
+    },
   },
 };
 
 export const Primary = {
   args: {
-    label: 'Button',
+    label: 'This is a button',
     type: 'primary',
-    showIcon: 'left'
+    iconPosition: 'left',
+    disabled: false,
+    icon: HELP_CIRCLE_ICON,
   },
 };

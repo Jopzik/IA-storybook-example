@@ -2,35 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/core/button.css';
 import Icon from "./Icon";
-import {PLUS_CIRCLE_ICON} from "../../icons/plus-circle";
+import {_icons} from "../../icons/_icons";
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({type, showIcon, size, label, ...props}) => {
+// El ícono se importa así solamente para mostrarse en Storybook.
+// No es necesario manejar un objeto ya en un proyecto real, puedes importar directamente el ícono que se necesite.
+
+export const Button = ({type, iconPosition, size, label, disabled, icon, ...props}) => {
   return (
     <button
       type="button"
+      disabled={disabled}
       className={['button', type].join(' ')}
       {...props}
     >
-      {showIcon === 'left' && <Icon size="1rem"
-        svg={PLUS_CIRCLE_ICON}/>}
+      {icon && iconPosition === 'left' && <Icon className="icon"
+        svg={_icons[icon]}/>}
       {label}
-      {showIcon === 'right' && <Icon size="1rem"
-        svg={PLUS_CIRCLE_ICON}/>}
+      {icon && iconPosition === 'right' && <Icon className="icon"
+        svg={_icons[icon]}/>}
     </button>
   );
 };
 
 Button.propTypes = {
   type: PropTypes.string,
-  showIcon: PropTypes.string,
+  iconPosition: PropTypes.string,
   label: PropTypes.string,
 };
 
 Button.defaultProps = {
   type: 'primary',
-  showIcon: 'left',
+  iconPosition: 'left',
   label: 'Button',
 };
