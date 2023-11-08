@@ -1,0 +1,82 @@
+.checkbox {
+  display     : flex;
+  font-family : sans-serif;
+  gap         : 0.25rem;
+  user-select : none;
+  cursor      : pointer;
+
+  &:has(.input:is(.disabled, :disabled)) {
+    cursor : not-allowed;
+  }
+
+  .input {
+    margin : 0;
+  }
+}
+
+.checkbox.switch {
+  --_checkbox-height     : 1.25rem;
+  --_checkbox-width      : 2.5rem;
+  --_checkbox-anchor     : 0;
+  --_checkbox-position   : calc((var(--_checkbox-height) / 2) + var(--_checkbox-anchor));
+  --_checkbox-background : #CDD1E3;
+  --_checkbox-slider     : white;
+  position               : relative;
+  align-items            : center;
+  background-color       : var(--_checkbox-background);
+  width                  : 2.5rem;
+  height                 : var(--_checkbox-height);
+  border-radius          : 1rem;
+
+  &::before {
+    content          : '';
+    position         : absolute;
+    left             : var(--_checkbox-position);
+    width            : var(--_checkbox-height);
+    height           : var(--_checkbox-height);
+    background-color : var(--_checkbox-slider);
+    border-radius    : 50%;
+    box-shadow       : 0 2px 4px rgba(0, 0, 0, 0.2);
+    scale            : 1.1;
+  }
+
+  &:has(.input:checked) {
+    --_checkbox-anchor     : calc(var(--_checkbox-width) - (var(--_checkbox-height) * 1.5));
+    --_checkbox-background : #225BE8;
+  }
+
+  &:has(.input:is(.disabled, :disabled)) {
+    --_checkbox-slider : #5C5C5C;
+  }
+
+  &:has(.input:checked:is(.disabled, :disabled)) {
+    --_checkbox-background : #8badff;
+    --_checkbox-slider     : #c3c3c3;
+  }
+
+  .input {
+    display : none;
+  }
+}
+
+.checkbox.chip {
+  --_checkbox-background : #f6f5f5;
+  --_checkbox-text       : #59656F;
+  background-color       : var(--_checkbox-background);
+  color                  : var(--_checkbox-text);
+  padding                : 0.25rem 0.5rem;
+  border-radius          : 0.25rem;
+
+  &:has(.input:checked) {
+    --_checkbox-background : #225BE8;
+    --_checkbox-text       : white;
+  }
+
+  &:has(.input:checked:is(.disabled, :disabled)) {
+    --_checkbox-background : #8badff;
+  }
+
+  .input {
+    display : none;
+  }
+}
